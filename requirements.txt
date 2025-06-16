@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+selenium
+pdfplumber
+python-docx
+python-pptx
+pytesseract
+PyMuPDF
+openai
+webdriver-manager
+readability-lxml
