@@ -9,3 +9,5 @@ PyMuPDF
 openai
 webdriver-manager
 readability-lxml
+python-dotenv
+pillow
