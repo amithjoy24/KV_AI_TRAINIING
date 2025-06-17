@@ -1,5 +1,6 @@
 from openai import OpenAI
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -55,15 +56,15 @@ You are an expert educational analyst.
 Here is the summary of student feedback about a session:
 {student_summary}
 
-Here is the summary of trainer and moderator feedback about a student:
+Here is the summary of trainers and moderators feedback about a student:
 {trainer_summary}
 
 Please provide:
 
-1. An integrated analysis highlighting key insights, agreements, differences, and recommendations for the student and future sessions.
+1. An integrated analysis highlighting key insights, agreements, differences, and recommendations for future sessions.
 """
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
         max_tokens=400
