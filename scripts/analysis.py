@@ -26,7 +26,7 @@ Text Content:
 {chunk_text}
 """
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "You are an expert training reviewer AI."},
             {"role": "user", "content": prompt}
