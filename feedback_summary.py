@@ -17,10 +17,10 @@ You are an expert analyst. Summarize the following {role_name} feedback points i
 - {text}
 """
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.5,
-        max_tokens=300
+        max_tokens=1000
     )
     return response.choices[0].message.content.strip()
 
@@ -42,10 +42,10 @@ You are an expert analyst. Summarize the following summarized {role_name} feedba
 - {combined_text}
 """
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.5,
-            max_tokens=300
+            max_tokens=1000
         )
         return response.choices[0].message.content.strip()
 
@@ -61,13 +61,14 @@ Here is the summary of trainers and moderators feedback about a student:
 
 Please provide:
 
-1. An integrated analysis highlighting key insights, agreements, differences, and recommendations for future sessions.
+1. An integrated analysis highlighting the overall perfomance of trainers and the quality of sessions.
+2. For each student analyze the feedback given by trainers and moderators and give analysis on how the student can improve where his weakness and strength lies.
 """
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
-        max_tokens=400
+        max_tokens=1000
     )
     return response.choices[0].message.content.strip()
 
