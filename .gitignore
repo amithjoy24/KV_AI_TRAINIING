@@ -5,3 +5,4 @@ __pycache__/
 .DS_Store
 token.json
 credentials.json
+extracted_content.json
